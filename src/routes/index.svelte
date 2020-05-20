@@ -42,7 +42,7 @@
 </style>
 
 <script lang="typescript">
-  export let title: string = "Sapper TypeScript SASS template";
+  export let title: string = "Sapper TypeScript Sass template";
 </script>
 
 <svelte:head>
