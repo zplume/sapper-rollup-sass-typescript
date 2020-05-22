@@ -1,10 +1,15 @@
 import { IncomingMessage, ServerResponse } from "http";
 
 declare global {
-    export class IncomingRequest extends IncomingMessage {
-        params?: any;
-        body?: any;
+    export module polka {
+        export class Request extends IncomingMessage {
+            params?: any;
+            body?: any;
+        }
+        
+        export class Response extends ServerResponse { }
+    
+        export type RequestHandler = (req: Request, res: Response, parsed?: object) => any;
     }
-
-    export type RequestHandler = (req: IncomingRequest, res: ServerResponse, parsed?: object) => any;
+    
 }
