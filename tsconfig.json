@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
+        "baseUrl": "src",
         "typeRoots" : ["./typings", "./node_modules/@types"]
     },
     "include": [
         "./src/**/*.ts",
-        "./src/**/*.js"
+        "./src/**/*.js", "src/utils/node_modules/writeJson/writeJson.ts"
     ]
  }
