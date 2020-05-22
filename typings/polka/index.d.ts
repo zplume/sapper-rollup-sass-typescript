@@ -1,5 +1,10 @@
 import { IncomingMessage, ServerResponse } from "http";
 
 declare global {
-    export type RequestHandler = (req: IncomingMessage, res: ServerResponse, parsed?: object) => any;
+    export class IncomingRequest extends IncomingMessage {
+        params?: any;
+        body?: any;
+    }
+
+    export type RequestHandler = (req: IncomingRequest, res: ServerResponse, parsed?: object) => any;
 }
