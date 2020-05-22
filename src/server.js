@@ -10,6 +10,7 @@ const dev = NODE_ENV === 'development';
 polka() // You can also use Express
 	.use(
 		bodyParser.json(),
+		bodyParser.urlencoded({ extended: true }),
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
