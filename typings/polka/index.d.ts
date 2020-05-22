@@ -9,7 +9,7 @@ declare global {
         
         export class Response extends ServerResponse { }
         
-        type HandleNext = (data?: any) => void;
+        export type HandleNext = (data?: any) => void;
     
         export type RequestHandler = (req: Request, res: Response, next?: HandleNext) => any;
     }
