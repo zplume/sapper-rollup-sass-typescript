@@ -10,7 +10,10 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
-    "clear:cache": "npm cache clear --force"
+    "clear:cache": "npm cache clear --force",
+    "clear:modules": "rimraf node_modules/*",
+    "install:dependencies": "npm i",
+    "reinstall": "run-s clear:cache clear:modules install:dependencies"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -23,7 +26,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.9.6",
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
@@ -34,6 +37,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.23",
     "postcss-load-config": "^2.1.0",
+    "rimraf": "^3.0.2",
     "rollup": "^2.10.5",
     "rollup-plugin-svelte": "^5.2.2",
     "rollup-plugin-terser": "^5.2.0",
